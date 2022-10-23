@@ -1,2 +1,2 @@
 # barbershop
-a barber reservation website
+a barber reservation website for a client
