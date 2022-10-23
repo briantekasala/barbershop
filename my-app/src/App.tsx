@@ -4,7 +4,7 @@ import { NavigationMenu } from './navigation/NavigationMenu';
 function App() {
   return (
     <div className="App">
-      <NavigationMenu></NavigationMenu>
+      <NavigationMenu/>
     </div>
   );
 }

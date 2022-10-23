@@ -1,0 +1,36 @@
+body {
+  font-family: "Roboto";
+}
+
+
+.navigationMenu{
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+}
+
+.navigationMenu > li{
+  float: left;
+  height: 150px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 150px;
+  
+}
+.navigationLinkHome{
+width: 500px;
+}
+
+.navigationLinkLogo{
+  width: 500px;
+}
+
+.navigationLinkMenu{
+  width: 500px;
+}
+.navigationLinkReservation{
+  background-color: #8a7256;
+  color: white;
+  width: 200px;
+}
