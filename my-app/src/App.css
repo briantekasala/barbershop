@@ -21,13 +21,13 @@ body {
 
 .navigationLinkLogo {
   width: 500px;
-  border:solid;
 }
 .navigationLinkLogo > img{
   height: 80px;
   width: 80px;
-  padding-top: 25px;
-  border-radius: 20px;
+  margin-top: 25px;
+  border:solid;
+  border-radius: 50px;
 }
 
 .navigationLinkMenu {
