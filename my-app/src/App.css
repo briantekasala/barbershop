@@ -2,35 +2,55 @@ body {
   font-family: "Roboto";
 }
 
-
-.navigationMenu{
+.navigationMenu {
   display: flex;
   justify-content: space-between;
   border-style: solid;
 }
 
-.navigationMenu > li{
+.navigationMenu > li {
   float: left;
   height: 150px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
   line-height: 150px;
-  
 }
-.navigationLinkHome{
-width: 500px;
-}
-
-.navigationLinkLogo{
+.navigationLinkHome {
   width: 500px;
 }
 
-.navigationLinkMenu{
+.navigationLinkLogo {
   width: 500px;
 }
-.navigationLinkReservation{
+
+.navigationLinkMenu {
+  width: 500px;
+}
+.navigationLinkReservation {
   background-color: #8a7256;
   color: white;
   width: 200px;
+}
+main {
+  display: flex;
+  border: solid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 72vh;
+}
+
+
+footer {
+  border: solid;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+footer> ol> li {
+  float: left;
+  
+  margin-left: 22px;
 }
