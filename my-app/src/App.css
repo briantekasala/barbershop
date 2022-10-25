@@ -5,6 +5,7 @@ body {
 .navigationMenu {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .navigationMenu > li {
@@ -20,7 +21,9 @@ body {
 }
 
 .navigationLinkLogo {
+  padding-left: 200px;
   width: 500px;
+  list-style: none;
 }
 .navigationLinkLogo > img{
   height: 80px;
@@ -44,7 +47,9 @@ main {
   align-items: center;
   text-align: center;
   min-height: 72vh;
+  z-index: 1;
 }
+
 
 
 footer {

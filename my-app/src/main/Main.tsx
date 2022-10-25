@@ -1,4 +1,5 @@
 import React from 'react';
+import MenuTable from '../navigation/MenuTable';
 
 function Main() {
     return (
@@ -7,7 +8,9 @@ function Main() {
            <h1>Dieudo Barber Shop</h1>
             <p>for men only </p>
            </div>
+           <MenuTable/>
         </main>
+        
      );
 }
 
