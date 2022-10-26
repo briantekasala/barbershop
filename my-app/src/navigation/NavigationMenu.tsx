@@ -1,5 +1,4 @@
 import * as React from 'react';
-import MenuTable from './MenuTable';
 
 
 export const NavigationMenu = ()=> {
