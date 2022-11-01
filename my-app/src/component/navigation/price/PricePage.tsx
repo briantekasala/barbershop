@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { OnClickContext } from "../../context/OnClickContext";
+import Footer from "../../footer/Footer";
 import { NavigationMenu } from "../NavigationMenu";
+import PageTitle from "../PageTitle";
 import PriceInfo from "./PriceInfo";
 function Price() {
     
@@ -9,9 +11,7 @@ function Price() {
     <div>
        <OnClickContext.Provider value={{onClick,setOnClick}}>
       <NavigationMenu />
-      <div className="priceTitle">
-        <h1>Hair cut price</h1>
-      </div>
+      <PageTitle title="Hair cut price"/>
       <div className="priceInfo">
         <PriceInfo title="Normal hair cut" description="normale knip beurt " price="15"/>
         <PriceInfo title="Beard" description="baard knippen " price="20"/>
@@ -19,6 +19,7 @@ function Price() {
         <PriceInfo title="Braids" description="Het vlechten van haar" price="15"/>
         <PriceInfo title="bald" description="helemaal kaal" price="15"/>
       </div>
+      <Footer />
       </OnClickContext.Provider>
     </div>
   );

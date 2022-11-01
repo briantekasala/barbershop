@@ -5,8 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Price from "./component/navigation/price/PricePage";
-import Gallery from "./component/navigation/Gallery";
-import Contact from "./component/navigation/Contact";
+import Gallery from "./component/navigation/gallery/GalleryPage";
+import Contact from "./component/navigation/contact/ContactPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

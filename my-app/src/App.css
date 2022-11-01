@@ -51,6 +51,7 @@ main {
 
 footer {
   display: flex;
+  bottom: 0;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -120,4 +121,17 @@ footer > ol > li {
   text-align: right;
   font-weight: bolder;
   padding-right: 15px;
+}
+
+/*style Gallery*/
+
+.galleryLayout{
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  gap: 15px;
+}
+.galleryItem{
+  border:solid;
+  text-align: center;
+  padding: 50px;
 }
