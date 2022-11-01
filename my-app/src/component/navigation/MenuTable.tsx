@@ -2,7 +2,6 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 import { Link } from "react-router-dom";
 
-
 const menuTable = createUseStyles({
   menuTable: {
     color: "black",
@@ -22,33 +21,30 @@ const menuTable = createUseStyles({
 function MenuTable() {
   const styles = menuTable();
   return (
- 
-      <div className={styles.menuTable}>
-        <ul>
-          <li>
-            <Link to="/">
-              <h1>Home</h1>
-            </Link>
-          </li>
-          <li>
-            <Link to="/Price">
-              <h1>Price</h1>
-            </Link>
-          </li>
-          <li>
-            <Link to="/Gallery">
-              <h1>Gallery</h1>
-            </Link>
-          </li>
-          <li>
-            <Link to="/Contact">
-              <h1>Contact</h1>
-            </Link>
-          </li>
-        </ul>
-        
-      </div>
-    
+    <div className={styles.menuTable}>
+      <ul>
+        <li>
+          <Link to="/">
+            <h1>Home</h1>
+          </Link>
+        </li>
+        <li>
+          <Link to="/Price">
+            <h1>Price</h1>
+          </Link>
+        </li>
+        <li>
+          <Link to="/Gallery">
+            <h1>Gallery</h1>
+          </Link>
+        </li>
+        <li>
+          <Link to="/Contact">
+            <h1>Contact</h1>
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 }
 

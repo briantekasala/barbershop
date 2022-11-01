@@ -11,6 +11,9 @@ import Contact from "./component/navigation/Contact";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+export const MyContext = React.createContext(true);
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
