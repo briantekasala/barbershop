@@ -6,7 +6,6 @@ body {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
-
 }
 
 .navigationMenu > li {
@@ -67,9 +66,7 @@ footer > ol > li {
 }
 
 /*style z-index*/
-
-
-.homeView{
+.homeView {
   position: relative;
   z-index: -1;
   opacity: 0.2;
@@ -94,4 +91,33 @@ footer > ol > li {
   40% {
     transform: scale(1, 1);
   }
+}
+
+/*Price Style*/
+
+.priceTitle {
+  text-align: center;
+  padding-top: 55px;
+}
+.priceTitle > h1 {
+  font-size: 75px;
+  text-transform: uppercase;
+}
+
+.priceInfo {
+  text-transform: uppercase;
+  padding: 25px;
+}
+.priceLayout {
+  display: grid;
+  grid-template-areas: "description price";
+}
+.description {
+  grid-area: description;
+}
+.price {
+  grid-area: price;
+  text-align: right;
+  font-weight: bolder;
+  padding-right: 15px;
 }
