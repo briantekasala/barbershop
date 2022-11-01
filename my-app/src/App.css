@@ -72,6 +72,16 @@ footer > ol > li {
   z-index: -1;
   opacity: 0.2;
 }
+.priceView{
+  position: relative;
+  z-index: -1;
+  opacity: 0.2;
+}
+.galleryView{
+  position: relative;
+  z-index: -1;
+  opacity: 0.2;
+}
 .menuView {
   position: absolute;
   display: flex;
