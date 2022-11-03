@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Price from "./component/navigation/price/PricePage";
 import Gallery from "./component/navigation/gallery/GalleryPage";
 import Contact from "./component/navigation/contact/ContactPage";
+import Reservation from "./component/navigation/reservation/ReservationPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -22,6 +23,7 @@ root.render(
         <Route path="/Price" element={<Price />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Reservation" element={<Reservation />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

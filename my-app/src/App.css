@@ -21,11 +21,14 @@ body {
 }
 
 .navigationLinkLogo {
-  padding-left: 200px;
+
   width: 500px;
   list-style: none;
+  padding-left: 250px;
+
 }
-.navigationLinkLogo > img {
+img {
+  position: relative;
   height: 80px;
   width: 80px;
   margin-top: 25px;
@@ -106,11 +109,11 @@ footer > ol > li {
 
 /*Price Style*/
 
-.priceTitle {
+.pageTitle {
   text-align: center;
   padding-top: 55px;
 }
-.priceTitle > h1 {
+.pageTitle > h1 {
   font-size: 75px;
   text-transform: uppercase;
 }
@@ -144,4 +147,41 @@ footer > ol > li {
   border:solid;
   text-align: center;
   padding: 50px;
+}
+
+/*maps*/
+#map { height: 180px; }
+.contact{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 15px;
+  text-align: center;
+  align-items: center;
+
+}
+.contactDescription{
+  text-transform: uppercase;
+  font-size:35px;
+}
+.contactDescription:hover{
+  color: gray;
+  cursor: pointer;
+}
+.contactInfo{
+  text-align: center;
+  margin-top: 15px;
+  padding: 15px;
+}
+.contactInfo>label{
+  font-weight: bolder;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.contactInfo>p{
+  padding: 15px;
+  color: gray;
+}
+.contactInfo>p>a{
+  text-decoration: none;
+  color: gray;
 }

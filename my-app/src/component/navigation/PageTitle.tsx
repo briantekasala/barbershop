@@ -5,7 +5,7 @@ interface IPageTitle {
 function PageTitle(props:IPageTitle) {
   const{title}=props;
   return (
-    <div className="priceTitle">
+    <div className="pageTitle">
       <h1>{title}</h1>
     </div>
   );
