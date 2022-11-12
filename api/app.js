@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require("./routes/index"));
-app.use('/reservation', require('./routes/reservation'));
+app.use('/reservationList', require('./routes/getReservationList'));
 app.use("/makeReservation" , require('./routes/makeReservation'))
 
 
