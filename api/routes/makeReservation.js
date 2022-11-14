@@ -10,6 +10,7 @@ router.post("/", async (req, res) => {
     name: req.body.name,
     phone: req.body.phone,
     date: req.body.date,
+    hour : req.body.hour,
     displacement: req.body.displacement,
     displacementAddress: req.body.displacementAddress,
   });
