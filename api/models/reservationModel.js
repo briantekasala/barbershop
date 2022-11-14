@@ -2,12 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reservationListSchema = new Schema({
-  name: { type: String, required: true },
-  phone: { type: String, required: true },
-  date: { type: Date, required: true },
-  hour : {type: String , required : true},
-  displacement: { type: Boolean, required: true },
-  displacementAddress: { type: String, },
+  Name: { type: String, required: true },
+  Phone: { type: String, required: true },
+  Date: { type: Date, required: true },
+  Hour : {type: String , required : true},
+  DisplacementAddress: { type: String, },
 
 }, {
   timestamps: true,

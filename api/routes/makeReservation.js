@@ -7,12 +7,11 @@ router.post("/", async (req, res) => {
   console.log(req.body);
 
   const data = new reservationData ({
-    name: req.body.name,
-    phone: req.body.phone,
-    date: req.body.date,
-    hour : req.body.hour,
-    displacement: req.body.displacement,
-    displacementAddress: req.body.displacementAddress,
+    Name: req.body.Name,
+    Phone: req.body.Phone,
+    Date: req.body.Date,
+    Hour : req.body.Hour,
+    DisplacementAddress: req.body.DisplacementAddress,
   });
 
   data.save((err) => {
