@@ -9,12 +9,12 @@ export const NavigationMenu = () => {
     <div className="navigation">
       <nav className="navigationMenu">
         <li className="navigationLinkHome">
-          <Link to="/">
+          <Link className="navigationLink" to="/">
             Home
           </Link>
         </li>
         <li className="navigationLinkLogo">
-          <Link to="/">
+          <Link className="navigationLink" to="/">
             <img className="Logo" src="/barberLogo1.png" alt="baber logo" />
           </Link>
         </li>

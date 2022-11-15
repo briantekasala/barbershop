@@ -8,6 +8,7 @@ import Price from "./component/navigation/price/PricePage";
 import Gallery from "./component/navigation/gallery/GalleryPage";
 import Contact from "./component/navigation/contact/ContactPage";
 import Reservation from "./component/navigation/reservation/ReservationPage";
+import Login from "./component/navigation/login/LoginPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -24,6 +25,7 @@ root.render(
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Reservation" element={<Reservation />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

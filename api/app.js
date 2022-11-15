@@ -36,5 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/index"));
 app.use("/reservationList", require("./routes/getReservationList"));
 app.use("/makeReservation", require("./routes/makeReservation"));
+app.use("/makeUser", require("./routes/makeUser"));
+app.use("/getUser", require("./routes/getUser"));
 
 module.exports = app;

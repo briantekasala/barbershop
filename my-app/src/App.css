@@ -20,6 +20,11 @@ body {
   width: 500px;
 }
 
+.navigationLink{
+  text-decoration: none;
+  color: black;
+}
+
 .navigationLinkLogo {
   width: 500px;
   list-style: none;
@@ -83,7 +88,7 @@ footer > ol > li {
   z-index: -1;
   opacity: 0.2;
 }
-.reservationView{
+.reservationView {
   position: relative;
   z-index: -1;
   opacity: 0.2;
@@ -258,4 +263,15 @@ button {
   margin: 20px 0px;
   width: 100%;
   height: 8%;
+}
+
+.loginLayout {
+  text-align: center;
+}
+
+.loginLayout > input {
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 50%;
 }

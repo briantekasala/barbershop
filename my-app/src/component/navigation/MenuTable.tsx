@@ -24,23 +24,28 @@ function MenuTable() {
     <div className={styles.menuTable}>
       <ul>
         <li>
-          <Link to="/">
+          <Link className="navigationLink" to="/">
             <h1>Home</h1>
           </Link>
         </li>
         <li>
-          <Link to="/Price">
+          <Link className="navigationLink" to="/Price">
             <h1>Price</h1>
           </Link>
         </li>
         <li>
-          <Link to="/Gallery">
+          <Link className="navigationLink" to="/Gallery">
             <h1>Gallery</h1>
           </Link>
         </li>
         <li>
-          <Link to="/Contact">
+          <Link className="navigationLink" to="/Contact">
             <h1>Contact</h1>
+          </Link>
+        </li>
+        <li>
+          <Link className="navigationLink" to="/Login">
+            <h1>Login</h1>
           </Link>
         </li>
       </ul>
