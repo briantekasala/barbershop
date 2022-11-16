@@ -7,7 +7,7 @@ const userData = require("../models/userModel").model;
 // router
 
 router.get("/", async (req, res) => {
-  let username = req.body.Name;
+  let username = req.query.Name
 
   await userData.find({ Name: username }).then((data) => {
     if (data.length == 0) {

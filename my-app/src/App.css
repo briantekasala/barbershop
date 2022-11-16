@@ -256,9 +256,10 @@ label {
 }
 
 button {
-  background-color: #6976d9;
+  background-color:#555555;
   color: white;
   font-family: sans-serif;
+  border-radius: 10px;
   font-size: 14px;
   margin: 20px 0px;
   width: 100%;
@@ -275,3 +276,63 @@ button {
   margin: 10px;
   width: 50%;
 }
+
+.loginLayout > button {
+  background-color:#555555;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 50%;
+}
+
+.planningSchema{
+  display: flex;
+  gap:5%
+}
+
+.planningDay{
+  border:solid 10px #dedede;
+  padding: 15px;
+  width: 45%;
+  height: 450px;
+  margin-left: 2%;
+  text-align: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.planningList{
+  border:solid 10px #dedede;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+
+.Note {
+  padding-left: 25px;
+}
+h4 {
+  color: #555555;
+  font-size: 42px;
+  letter-spacing: -2px;
+  text-align: left;
+}
+.list {
+  color: #555;
+  font-size: 22px;
+  padding: 0 !important;
+  width: 100%;
+  font-family: courier, monospace;
+  border: 1px solid #dedede;
+}
+.list li {
+  list-style: none;
+  border-bottom: 1px dotted #ccc;
+  height: auto;
+  padding: 10px;
+  width: 100%;
+  text-transform: capitalize;
+}
+
