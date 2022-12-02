@@ -8,6 +8,10 @@ import PageTitle from "../PageTitle";
 import MenuTable from "../MenuTable";
 
 function Reservation() {
+
+  React.useEffect(()=> {
+
+  }, [])
   const [onClick, setOnClick] = useState<boolean>(true);
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const Reservation = new ReservationService("http://localhost:3005");
