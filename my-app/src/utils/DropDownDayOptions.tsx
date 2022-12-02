@@ -1,4 +1,6 @@
-export const DropDownDayOptions = [
+import { IDropdownOption } from "@fluentui/react";
+
+export const DropDownDayOptions : IDropdownOption[] = [
   {
     key: "Monday",
     text: "Monday",
