@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const reservationListSchema = new Schema({
   Name: { type: String, required: true },
   Phone: { type: String, required: true },
-  Date: { type: Date, required: true },
+  Day: { type: String, required: true },
   Hour : {type: String , required : true},
   DisplacementAddress: { type: String, },
 

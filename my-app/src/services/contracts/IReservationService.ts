@@ -2,7 +2,7 @@ export interface IReservationService {
   makeReservation(
     name: string,
     phone: string,
-    date: Date,
+    day: string,
     hour: string,
     displacementAddress: string
   ): Promise<void>;

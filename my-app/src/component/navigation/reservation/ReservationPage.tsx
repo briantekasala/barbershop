@@ -16,59 +16,92 @@ function Reservation() {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const [_dayOptions, set_DayOptions] = useState<any>([]);
   const [_hoursOptions, set_HoursOptions] = useState<any>([]);
+  const [_weekendHoursOptions, set_WeekendHoursOptions] = useState<any>([]);
+  const [selectedDay, setSelectedDay] = React.useState<string>();
+  const [selectedHours, setSelectedHours] = React.useState<string>();
+  const [enteredName, setEnteredName] = React.useState<string>();
+  const [enteredPhoneNumber, setEnteredPhoneNumber] = React.useState<string>();
+  const [enteredAddress, setEnteredAddress] = React.useState<string>();
   const Reservation = new ReservationService(apiURl);
 
   React.useEffect(() => {
     const UserPlanning = new PlannerService(apiURl);
     const dayOptions: IDropdownOption[] = [];
     const hoursOptions: IDropdownOption[] = [];
+    const weekendHoursOptions: IDropdownOption[] = [];
     const getUserPlanning = async () => {
       let userPlanning: IUserPlanning[] = await UserPlanning.getUserPlanning();
-      console.log(userPlanning);
       userPlanning.map((data: IUserPlanning, index: number) => {
         dayOptions.push({ key: data.day, text: data.day });
-
-        data.hours.map((hours) => {
-          hoursOptions.push({ key: index, text: hours });
-        });
+        if (data.day === "Monday") {
+          data.hours.map((hours) => {
+            hoursOptions.push({ key: index, text: hours });
+          });
+        }
+        if (data.day === "Saturday" || data.day === "Sunday") {
+          data.hours.map((hours) => {
+            weekendHoursOptions.push({ key: index, text: hours });
+          });
+        }
 
         set_DayOptions(dayOptions);
         set_HoursOptions(hoursOptions);
+        set_WeekendHoursOptions(weekendHoursOptions);
       });
     };
     getUserPlanning();
   }, [apiURl]);
   console.log(_dayOptions);
   console.log(_hoursOptions);
-
-  let inputNameRef = React.useRef(null);
-  let inputPhoneRef = React.useRef(null);
-  let inputDateRef = React.useRef(null);
-  let inputHourRef = React.useRef(null);
-  let inputAddressRef = React.useRef(null);
+  console.log(_weekendHoursOptions);
 
   const submitData = async () => {
-    if (inputNameRef?.current?.["value"] === "") {
+    console.log(selectedDay);
+    console.log(enteredName);
+    if (enteredName === undefined || enteredName === "") {
       alert("Vul u naam in !");
     }
-    if (inputPhoneRef?.current?.["value"] === "") {
+    if (enteredPhoneNumber === "" || enteredPhoneNumber === undefined) {
       alert("Vul u phone nummer in !");
     }
-    if (inputDateRef?.current?.["value"] === "") {
-      alert("Geef de datum in !");
+    if (selectedDay === undefined) {
+      alert("Geef een dag in !");
     }
-    if (inputHourRef?.current?.["value"] === "") {
+    if (selectedHours === undefined) {
       alert("Geef het uur in !");
     } else {
-      let name = inputNameRef?.current?.["value"];
-      let phone = inputPhoneRef?.current?.["value"];
-      let data = inputDateRef?.current?.["value"];
-      let hour = inputHourRef?.current?.["value"];
-      let address = inputAddressRef?.current?.["value"];
-      await Reservation.makeReservation(name, phone, data, hour, address);
+      await Reservation.makeReservation(
+        enteredName,
+        enteredPhoneNumber,
+        selectedDay,
+        selectedHours,
+        enteredAddress
+      );
     }
   };
-
+  const onChangeName = (event: React.FormEvent<HTMLInputElement>): void => {
+    setEnteredName(event.currentTarget.value);
+  };
+  const onChangePhoneNumber = (
+    event: React.FormEvent<HTMLInputElement>
+  ): void => {
+    setEnteredPhoneNumber(event.currentTarget.value);
+  };
+  const onChangeDay = (
+    event: React.FormEvent<HTMLDivElement>,
+    item: IDropdownOption<any> | undefined
+  ): void => {
+    setSelectedDay(item?.text);
+  };
+  const onChangeHours = (
+    event: React.FormEvent<HTMLDivElement>,
+    item: IDropdownOption<any> | undefined
+  ): void => {
+    setSelectedHours(item?.text);
+  };
+  const onChangeAddress = (event: React.FormEvent<HTMLInputElement>): void => {
+    setEnteredAddress(event.currentTarget.value);
+  };
   return (
     <div>
       <OnClickContext.Provider value={{ onClick, setOnClick }}>
@@ -80,13 +113,39 @@ function Reservation() {
             <div className="reservationForm">
               <form>
                 <h3>Name</h3>
-                <input name="name" required={true} ref={inputNameRef} />
+                <input name="name" required={true} onChange={onChangeName} />
                 <h3>Phone</h3>
-                <input name="phone" required={true} ref={inputPhoneRef} />
+                <input
+                  name="phone"
+                  required={true}
+                  onChange={onChangePhoneNumber}
+                />
                 <h3>Date</h3>
-                <Dropdown placeholder="select day" options={_dayOptions} />
-                <h3>Hour</h3>
-                <Dropdown placeholder="select hour" options={_hoursOptions} />
+                <Dropdown
+                  placeholder="select day"
+                  options={_dayOptions}
+                  onChange={onChangeDay}
+                />
+                {selectedDay === "Saturday" || selectedDay === "Sunday" ? (
+                  <>
+                    <h3>Hour</h3>
+                    <Dropdown
+                      placeholder="select hour"
+                      options={_weekendHoursOptions}
+                      onChange={onChangeHours}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <h3>Hour</h3>
+                    <Dropdown
+                      placeholder="select hour"
+                      options={_hoursOptions}
+                      onChange={onChangeHours}
+                    />
+                  </>
+                )}
+
                 <h3>Displacement</h3>
                 <input
                   type={"checkbox"}
@@ -101,7 +160,7 @@ function Reservation() {
                     <input
                       name="Address"
                       required={true}
-                      ref={inputAddressRef}
+                      onChange={onChangeAddress}
                     />
                   </>
                 )}
@@ -118,38 +177,45 @@ function Reservation() {
               <div className="reservationForm">
                 <form>
                   <h3>Name</h3>
-                  <input name="name" required={true} ref={inputNameRef} />
+                  <input name="name" required={true} onChange={onChangeName} />
                   <h3>Phone</h3>
-                  <input name="phone" required={true} ref={inputPhoneRef} />
+                  <input
+                    name="phone"
+                    required={true}
+                    onChange={onChangePhoneNumber}
+                  />
                   <h3>Date</h3>
-                  <input
-                    type={"date"}
-                    name="date"
-                    required={true}
-                    ref={inputDateRef}
+                  <Dropdown
+                    placeholder="select day"
+                    options={_dayOptions}
+                    onChange={onChangeDay}
                   />
-                  <h3>Hour</h3>
-                  <input
-                    type={"time"}
-                    name="hour"
-                    required={true}
-                    ref={inputHourRef}
-                  />
-                  <h3>Displacement</h3>
-                  <input
-                    type={"checkbox"}
-                    name="Displacement"
-                    onChange={() => {
-                      setIsChecked((prevCheck: any) => !prevCheck);
-                    }}
-                  />
+                  {selectedDay === "Saturday" || selectedDay === "Sunday" ? (
+                    <>
+                      <h3>Hour</h3>
+                      <Dropdown
+                        placeholder="select hour"
+                        options={_weekendHoursOptions}
+                        onChange={onChangeHours}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <h3>Hour</h3>
+                      <Dropdown
+                        placeholder="select hour"
+                        options={_hoursOptions}
+                        onChange={onChangeHours}
+                      />
+                    </>
+                  )}
                   {isChecked && (
                     <>
                       <h3>Address</h3>
                       <input
                         name="Address"
                         required={true}
-                        ref={inputAddressRef}
+                        onChange={onChangeAddress}
                       />
                     </>
                   )}

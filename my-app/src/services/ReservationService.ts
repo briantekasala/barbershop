@@ -9,14 +9,14 @@ export class ReservationService implements IReservationService {
   async makeReservation(
     name?: string,
     phone?: string,
-    date?: Date,
+    day?: string,
     hour?: string,
     displacementAddress?: string
   ): Promise<void> {
     let data = {
       Name: name,
       Phone: phone,
-      Date: date,
+      Day: day,
       Hour: hour,
       DisplacementAddress: displacementAddress,
     };

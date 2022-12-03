@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
   const data = new reservationData ({
     Name: req.body.Name,
     Phone: req.body.Phone,
-    Date: req.body.Date,
+    Day: req.body.Day,
     Hour : req.body.Hour,
     DisplacementAddress: req.body.DisplacementAddress,
   });
