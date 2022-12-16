@@ -1,15 +1,18 @@
 import React from "react";
 
 interface INote {
-    reservationPlanning : any
+    reservationPlanning? : any
+    day : string;
 }
 
-function Note() {
+function Note(props:INote) {
+  const {day} = props;
+  console.log(day);
   return (
     <div className="Note">
-      <h4>Notes</h4>
+      <h4>{day}</h4>
       <ul className="list">
-        <li>naam: brian , verplaasting :bosuil 79 , Uur: 17h</li>
+        <li>naam:  , verplaasting :bosuil 79 , Uur: 17h</li>
         <li>naam: owen , verplaasting :bosuil 79 , Uur: 18h</li>
         <li>naam: kris , verplaasting :bosuil 79 , Uur: 19h</li>
         <li>naam: Bart , verplaasting :bosuil 79 , Uur: 20h</li>

@@ -6,4 +6,6 @@ export interface IReservationService {
     hour: string,
     displacementAddress: string
   ): Promise<void>;
+
+  getReservation(day:string):Promise<[]>;
 }

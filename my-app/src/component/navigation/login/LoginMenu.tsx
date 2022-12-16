@@ -8,7 +8,7 @@ export interface ILoginMenu {
   userService: UserService;
 }
 
-const LoginMEnu = (props: ILoginMenu) => {
+const LoginMenu = (props: ILoginMenu) => {
   const { setIsLoggedIn, userService } = props;
   let userInputRef = useRef(null);
   let passwordInputRef = useRef(null);
@@ -42,12 +42,13 @@ const LoginMEnu = (props: ILoginMenu) => {
         className="loginInput"
         ref={userInputRef}
         type="text"
-        placeholder="User"
+        placeholder="Dieudomak"
+        value={"Dieudomak"}
       />
-      <input ref={passwordInputRef} type="password" placeholder="Password" />
+      <input ref={passwordInputRef} type="password" placeholder="password" value={"DieuVPAq3"} />
       <button onClick={logUserIn}>Login</button>
     </div>
   );
 };
 
-export default LoginMEnu;
+export default LoginMenu;

@@ -78,11 +78,12 @@ function PlanningAsker() {
       }
       if (days === "Sunday") {
         userPlanning.makePlanning(days, selectedSundayHours);
-      } 
+      }
       if (days !== "Saturday" && days !== "Sunday") {
         userPlanning.makePlanning(days, selectedHours);
       }
     });
+    alert("Jouw Dagen zijn opgeslagen !");
   };
   return (
     <div className="planningDay">

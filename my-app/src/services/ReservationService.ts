@@ -39,4 +39,24 @@ export class ReservationService implements IReservationService {
       throw new Error();
     }
   }
+
+  async getReservation(day: string): Promise<[]> {
+    try {
+      const reservationDayList = await fetch(
+        `${this.url}/reservationList?Day=${day}`,
+        {
+          method: "GET",
+        }
+      );
+      if (!reservationDayList.ok) {
+        throw new Error(await reservationDayList.text());
+      }
+
+      const result = await reservationDayList.json();
+
+      return result;
+    } catch (error: any) {
+      throw new Error(error);
+    }
+  }
 }

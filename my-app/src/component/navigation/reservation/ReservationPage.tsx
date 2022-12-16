@@ -51,9 +51,7 @@ function Reservation() {
     };
     getUserPlanning();
   }, [apiURl]);
-  console.log(_dayOptions);
-  console.log(_hoursOptions);
-  console.log(_weekendHoursOptions);
+
 
   const submitData = async () => {
     console.log(selectedDay);
